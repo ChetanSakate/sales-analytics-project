@@ -7,6 +7,13 @@ on:
   schedule:
     - cron: '0 9 * * *'
 
+# ==========================================
+# IMPORTANT PERMISSION FIX
+# ==========================================
+
+permissions:
+  contents: write
+
 jobs:
 
   analytics-job:
@@ -15,8 +22,16 @@ jobs:
 
     steps:
 
+      # ==========================================
+      # CHECKOUT REPOSITORY
+      # ==========================================
+
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      # ==========================================
+      # SETUP PYTHON
+      # ==========================================
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -24,13 +39,25 @@ jobs:
         with:
           python-version: '3.11'
 
+      # ==========================================
+      # INSTALL DEPENDENCIES
+      # ==========================================
+
       - name: Install Requirements
         run: |
           pip install -r requirements.txt
 
-      - name: Run Analytics Pipeline
+      # ==========================================
+      # RUN ANALYTICS PIPELINE
+      # ==========================================
+
+      - name: Execute Analytics Pipeline
         run: |
           python main.py
+
+      # ==========================================
+      # COMMIT REPORTS
+      # ==========================================
 
       - name: Commit Reports
 
