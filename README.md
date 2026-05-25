@@ -116,6 +116,12 @@ The project follows enterprise engineering principles:
 | Reporting | CSV / Text Reports |
 
 ---
+# Author
+Chetan Sakate
+
+Aspiring Analytics Engineer | Business Intelligence Enthusiast | Data Analytics Practitioner
+
+---
 
 # Project Architecture
 
@@ -152,3 +158,6 @@ sales-analytics-project/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+
+
+
